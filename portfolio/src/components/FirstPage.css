@@ -1,0 +1,22 @@
+.firstpage {
+    width: 50%;
+    height: 50%;
+}
+
+.linkbutton {
+    width: 35%;
+    height: 9%;
+    background-color: #213547;
+    border-radius: 30px;
+    color: #cac529;
+    font-size: 200%;
+    letter-spacing: 2px;
+    text-shadow: #1a1a1a 0px 0px 1px;
+}
+
+.name {
+    font-size: 450%;
+    margin-bottom: 0;
+    font-family: Garamond, serif;
+    letter-spacing: 15px;
+}

@@ -1,14 +1,15 @@
 import { useNavigate } from "react-router-dom";
+import './FirstPage.css'
 
 
 const FirstPage = () => {
     const navigate = useNavigate();
 
     return (
-        <div>
-            <h1>Welcome</h1>
-            <button onClick={() => navigate("/main")}>Go to Main Page</button>
-        </div>
+        <>
+            <h1 className='name'>RAFAELLE FRANCISCO</h1>
+            <button className='linkbutton' onClick={() => navigate("/main")}>Go to Main Page</button>
+        </>
     );
 };
 
