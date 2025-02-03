@@ -1,15 +1,20 @@
-import viteLogo from "*.svg";
+import viteLogo from "../assets/react.svg";
 import reactLogo from "../assets/react.svg";
+import React from "react";
+import './Main.css'
 
-function Main (){
-    return
+const Main = () => {
+    const [count, setCount] = React.useState(0);
+
+    return (
     <>
-        <a href="https://vite.dev" target="_blank">
-            <img src={viteLogo} className="logo" alt="Vite logo"/>
-        </a>
-        <a href="https://react.dev" target="_blank">
-            <img src={reactLogo} className="logo react" alt="React logo"/>
-        </a>
+        <div>
+            <a href="https://vite.dev" target="_blank">
+                <img src={viteLogo} className="logo" alt="Vite logo"/>
+            </a>
+            <a href="https://react.dev" target="_blank">
+                <img src={reactLogo} className="logo react" alt="React logo"/>
+            </a>
         </div>
         <h1>Vite + React</h1>
         <div className="card">
@@ -23,7 +28,8 @@ function Main (){
         <p className="read-the-docs">
             Click on the Vite and React logos to learn more
         </p>
-</>
+    </>
+    )
 }
 
 
