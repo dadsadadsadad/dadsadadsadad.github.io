@@ -1,17 +1,30 @@
 .firstpage {
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
 }
 
 .linkbutton {
     width: 35%;
     height: 9%;
-    background-color: #213547;
+    background-color: #393939;
+    border: 0.5px solid black;
     border-radius: 30px;
     color: #cac529;
     font-size: 200%;
     letter-spacing: 2px;
     text-shadow: #1a1a1a 0px 0px 1px;
+    transition: 2s ease all;
+}
+
+.linkbutton:hover {
+    box-shadow: 1px 1px 16px 4px rgba(0,0,0,0.65);
+    background-color: #474747;
+    scale: 105%;
 }
 
 .name {
