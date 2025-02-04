@@ -6,10 +6,9 @@ const FirstPage = () => {
     const navigate = useNavigate();
 
     return (
-        <>
-            <h1 className='name'>RAFAELLE FRANCISCO</h1>
-            <button className='linkbutton' onClick={() => navigate("/main")}>Go to Main Page</button>
-        </>
+        <div className='firstpage'>
+            <button className='linkbutton' onClick={() => navigate("/main")}>Get to know me.</button>
+        </div>
     );
 };
 
