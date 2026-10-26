@@ -4,10 +4,11 @@
   const smooth = t => t * t * (3 - 2 * t)
 
   const clock = document.getElementById('clock')
-  const timeFormat = new Intl.DateTimeFormat('en-GB', {
+  const timeFormat = new Intl.DateTimeFormat('en-US', {
     timeZone: 'Asia/Manila',
-    hour: '2-digit',
+    hour: 'numeric',
     minute: '2-digit',
+    hour12: true,
   })
   const updateClock = () => {
     clock.textContent = timeFormat.format(new Date())
@@ -206,22 +207,58 @@
   )
   steps.forEach(li => stepObserver.observe(li))
 
-  // PH Traffic Index: a day of hourly readings fills in as the section scrolls past
+  // PH Traffic Index: a day of hourly readings. It fills as you scroll, and on hover
+  // the fill follows the mouse so you can slide through the day.
   const hours = document.querySelector('[data-hours]')
   const hourRow = hours.querySelector('.hours-row')
+  const hourLabel = hours.querySelector('[data-hour-label]')
+  const hourHint = hours.querySelector('.hours-hint')
   const hourCells = Array.from({ length: 24 }, () => hourRow.appendChild(document.createElement('span')))
+  const defaultLabel = hourLabel.textContent
   let hoursFilled = -1
+  let pointerHour = null
 
-  function updateHours() {
-    const r = hours.getBoundingClientRect()
-    const p = reduceMotion ? 1 : clamp((innerHeight * 0.9 - r.top) / (innerHeight * 0.6), 0, 1)
-    const filled = Math.round(p * 24)
+  const hourName = i => {
+    const h = i % 12 === 0 ? 12 : i % 12
+    return `${h}:07 ${i < 12 ? 'AM' : 'PM'}`
+  }
+
+  function setHours(filled) {
     if (filled === hoursFilled) return
     hoursFilled = filled
     hourCells.forEach((cell, i) => {
       cell.classList.toggle('read', i < filled)
-      cell.classList.toggle('latest', i === filled - 1 && filled < 24)
+      cell.classList.toggle('latest', i === filled - 1 && (pointerHour !== null || filled < 24))
     })
+  }
+
+  const hourFromPointer = e => {
+    const r = hourRow.getBoundingClientRect()
+    return clamp(Math.floor(((e.clientX - r.left) / r.width) * 24), 0, 23)
+  }
+
+  hours.addEventListener('pointermove', e => {
+    pointerHour = hourFromPointer(e)
+    hourLabel.textContent = `Reading ${pointerHour + 1} of 24, taken at ${hourName(pointerHour)}`
+    hourHint.style.visibility = 'hidden'
+  })
+  hours.addEventListener('pointerleave', () => {
+    pointerHour = null
+    hoursFilled = -1
+    hourLabel.textContent = defaultLabel
+    hourHint.style.visibility = ''
+  })
+
+  if (!matchMedia('(hover: hover)').matches) hourHint.textContent = 'Drag across the hours'
+
+  function updateHours() {
+    if (pointerHour !== null) {
+      setHours(pointerHour + 1)
+      return
+    }
+    const r = hours.getBoundingClientRect()
+    const p = reduceMotion ? 1 : clamp((innerHeight * 0.9 - r.top) / (innerHeight * 0.6), 0, 1)
+    setHours(Math.round(p * 24))
   }
 
   // Trackage: type the install command, then scroll the site inside the frame

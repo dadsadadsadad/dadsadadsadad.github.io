@@ -21,8 +21,7 @@
   <header class="bar">
     <a class="mark" href="#top" aria-label="Back to top">RF</a>
     <nav aria-label="Sections">
-      <a href="#ceit">Work</a>
-      <a href="#about">About</a>
+      <a href="#ceit">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
     <p class="clock">Manila <time id="clock">--:--</time></p>
@@ -54,7 +53,7 @@
       </h1>
 
       <div class="hero-foot">
-        <p class="lede">I'm a full-stack developer in the Philippines. Lately: an inventory system for our college, a jeepney app for commuters, an hourly traffic dataset for 25 routes across the country, and a usage tracker for AI coding agents.</p>
+        <p class="lede">I build web and mobile apps, mostly with Next.js, Flutter and Postgres. I'm finishing my Computer Science degree in Rizal.</p>
         <p class="hint">Drag the screenshots around</p>
       </div>
     </section>
@@ -67,13 +66,13 @@
 
       <div class="ceit-grid">
         <div class="project-copy">
-          <p>QR-based inventory for the College of Engineering and IT's labs. Every unit gets an asset tag like <code>PC-LAB1-0001</code> and a printed label. Staff scan it to edit the record; students scan it to borrow, return or report a problem.</p>
+          <p>My capstone. Every piece of equipment in the CEIT labs gets its own QR label. Staff scan it to update the record, and students scan it to borrow the item or report that it's broken. I'm the only developer on it, and it's live.</p>
           <ul class="features">
-            <li>QR labels, single or a whole A4 sheet</li>
-            <li>Borrowing, reservations, overdue reminders</li>
-            <li>Maintenance tickets and an audit trail</li>
-            <li>CSV / Excel import with a dry-run check</li>
-            <li>Reports on the page or as PDF and CSV</li>
+            <li>QR labels, one at a time or a full A4 sheet</li>
+            <li>Borrowing, reservations and overdue reminders</li>
+            <li>Repair tickets and a log of every change</li>
+            <li>Import from Excel or CSV, checked before it saves</li>
+            <li>Reports you can view or download</li>
           </ul>
 
           <div class="printer" aria-hidden="true">
@@ -105,7 +104,7 @@
         <h2 class="project-title">Para</h2>
         <p class="project-meta">2026 · Mobile app · Heading to Play Store &amp; App Store</p>
       </div>
-      <p class="para-intro">Jeepneys carry millions of people a day, but there's no timetable, no fixed stops and no official map. You learn the routes by asking. Para puts them on a map, plans the trip, and tells you the fare before you ride.</p>
+      <p class="para-intro">Jeepneys don't have timetables or an official map, so most people learn the routes by asking around. Para puts the routes on a map, plans the trip, and tells you the fare before you get on.</p>
 
       <div class="para-grid">
         <div class="para-phone-wrap">
@@ -119,20 +118,20 @@
 
         <ol class="para-steps">
           <li data-step="0">
-            <h3>Every route, drawn as its signboard</h3>
-            <p>Tap a route for its stops, hours and fare; tap a terminal for every route that passes it. Routes, stops and fares are cached, so it keeps working without signal.</p>
+            <h3>The routes, the way they look on the jeep</h3>
+            <p>Every route is drawn as its signboard. Tap one to see its stops, hours and fare. It works offline too.</p>
           </li>
           <li data-step="1">
-            <h3>A trip planner for transport with no timetable</h3>
-            <p>Routes are cut into points every 150 m and searched on the phone for trips with one, two or three rides. No server ever learns where you're going.</p>
+            <h3>Trip planning without a timetable</h3>
+            <p>The planner runs on the phone itself, so it's fast, it works without signal, and where you're going never gets sent anywhere.</p>
           </li>
           <li data-step="2">
-            <h3>The fare, before you ride</h3>
-            <p>Worked out from the official fare matrices for regular, student, senior and PWD riders, with a check for when you've been overcharged.</p>
+            <h3>Know the fare first</h3>
+            <p>Fares come from the official fare tables, with the student, senior and PWD discounts. There's also a check for when you get overcharged.</p>
           </li>
           <li data-step="3">
-            <h3>Live jeeps from the drivers themselves</h3>
-            <p>Driver Mode shares a jeep's position in the background, about every 10 seconds and only when it has moved, so commuters see what's coming.</p>
+            <h3>See the jeep coming</h3>
+            <p>Drivers can turn on Driver Mode, which shares where the jeep is so the people waiting can see it.</p>
           </li>
         </ol>
       </div>
@@ -154,7 +153,7 @@
       <div class="hours" data-hours aria-hidden="true">
         <div class="hours-row"></div>
         <div class="hours-scale"><span>12 AM</span><span>6 AM</span><span>12 PM</span><span>6 PM</span><span>11 PM</span></div>
-        <p class="hours-note">One reading of all 25 routes every hour, at minute 7</p>
+        <p class="hours-note"><span data-hour-label>One reading every hour, at minute 7</span><span class="hours-hint">Move your mouse over the hours</span></p>
       </div>
 
       <div class="traffic-grid">
@@ -169,12 +168,12 @@
         </div>
 
         <div class="project-copy">
-          <p>Waze and Google show traffic right now. What they don't publish is a history you can compare. Every hour a GitHub Actions job asks TomTom how long 25 fixed routes take with live traffic and saves the answer, building a dataset of the same trips measured the same way, week after week.</p>
+          <p>I wanted to know which roads are actually the worst and at what time, and I couldn't find that data anywhere, so I started collecting it. Every hour a script asks TomTom how long 25 routes take with traffic and saves the answer.</p>
           <ul class="features">
-            <li>19 city routes in seven cities, 6 highways out of Manila</li>
-            <li>Rankings, rush-hour curves and event comparisons</li>
-            <li>A request counter that keeps it on TomTom's free tier</li>
-            <li>No server of its own: GitHub, Supabase and Vercel</li>
+            <li>Metro Manila, Cebu, Davao, Baguio and more, plus 6 highways</li>
+            <li>Rankings, rush hour curves and event comparisons</li>
+            <li>A counter that keeps it on TomTom's free plan</li>
+            <li>Runs on GitHub, Supabase and Vercel, no server to pay for</li>
           </ul>
           <p class="stack">Next.js · TypeScript · Supabase · GitHub Actions · TomTom Routing API · MapLibre</p>
           <p class="links">
@@ -192,14 +191,14 @@
 
       <div class="trackage-grid">
         <div class="project-copy">
-          <p>Usage, cost and context analytics for AI coding agents like Claude Code, Codex and Gemini CLI, across every computer you use. A small open-source collector reads the logs the agents already keep and syncs numbers only. Prompts, code and file paths never leave your machine.</p>
+          <p>Started because I wanted to see what my AI coding tools were costing me. A small open-source program reads the logs the tools already save and uploads only the numbers, so prompts and code stay on your computer.</p>
           <div class="terminal" aria-label="npx trackage">
             <span class="prompt">$</span> <span class="typed" data-type="npx trackage"></span><span class="caret"></span>
           </div>
           <ul class="features">
-            <li>Live view of every running agent</li>
+            <li>See every agent that's running right now</li>
             <li>Cost per session, project and model</li>
-            <li>Alerts in the app, email, Slack or Discord</li>
+            <li>Alerts by email, Slack or Discord</li>
             <li>Free, Pro and Team plans</li>
           </ul>
           <p class="stack">Node.js · Express · React · WebSocket · Fly.io</p>
@@ -218,33 +217,10 @@
       </div>
     </section>
 
-    <section class="about" id="about">
-      <h2>About</h2>
-      <div class="about-body">
-        <p>I'm Rafaelle. I like software that disappears into someone's day: the scanner that just works, the fare you know before you board, the report that comes out already formatted.</p>
-        <p>I care about the parts nobody demos, like empty states, error messages, offline mode and what the database lets each role touch. Most of what I build is TypeScript or Dart, from the schema to the last hover state.</p>
-      </div>
-
-      <div class="toolbox">
-        <div>
-          <h3>Front end</h3>
-          <ul><li>React &amp; Next.js</li><li>Flutter</li><li>TypeScript, Dart</li><li>Accessible, responsive UI</li></ul>
-        </div>
-        <div>
-          <h3>Back end</h3>
-          <ul><li>PostgreSQL, PostGIS</li><li>Supabase, Prisma</li><li>Node.js &amp; Express</li><li>Row level security, auth</li></ul>
-        </div>
-        <div>
-          <h3>Shipping</h3>
-          <ul><li>Git &amp; GitHub</li><li>Vercel, Fly.io</li><li>Playwright, pgTAP</li><li>Migrations on live data</li></ul>
-        </div>
-      </div>
-    </section>
-
     <section class="contact" id="contact">
-      <h2 class="contact-title">Let's talk</h2>
+      <h2 class="contact-title">Get in touch</h2>
       <div class="contact-row">
-        <p>Building something, hiring, or just want to compare notes? My inbox is open.</p>
+        <p>Want to work together, or have a question about something here? Email me.</p>
         <div class="contact-links">
           <a class="email" href="mailto:rafaelle.raprap@gmail.com">rafaelle.raprap@gmail.com</a>
           <span class="contact-small">
