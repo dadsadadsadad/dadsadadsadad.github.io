@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rafaelle Francisco, developer</title>
-  <meta name="description" content="Rafaelle Francisco is a full-stack developer in the Philippines. CEIT Inventory, Para and Trackage.">
+  <meta name="description" content="Rafaelle Francisco is a full-stack developer in the Philippines. CEIT Inventory, Para, PH Traffic Index and Trackage.">
   <meta name="theme-color" content="#ece7dc">
   <meta property="og:title" content="Rafaelle Francisco, developer">
-  <meta property="og:description" content="CEIT Inventory, Para and Trackage.">
+  <meta property="og:description" content="CEIT Inventory, Para, PH Traffic Index and Trackage.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://dadsadadsadad.github.io/img/ceit-dashboard.webp">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -40,8 +40,8 @@
         <a class="print" href="#trackage" style="--x: 73%; --y: 42%; --r: 3deg; --w: 20vw; --mx: 44%; --my: 31%; --mw: 46vw" data-delay="420">
           <img src="img/trackage-site.webp" alt="Trackage website" width="1440" height="2406" class="crop-top">
         </a>
-        <a class="print" href="#para" style="--x: 33%; --y: 9%; --r: -9deg; --w: 10.5vw; --mx: 9%; --my: 27%; --mw: 23vw" data-delay="520">
-          <img src="img/para-fare.webp" alt="Para fare check" width="600" height="1333">
+        <a class="print" href="#traffic" style="--x: 33%; --y: 9%; --r: -9deg; --w: 10.5vw; --mx: 9%; --my: 27%; --mw: 23vw" data-delay="520">
+          <img src="img/traffic-phone.webp" alt="PH Traffic Index on a phone" width="600" height="1298">
         </a>
         <a class="print print--label" href="#ceit" style="--x: 79%; --y: 29%; --r: 11deg; --w: 8.5vw; --mx: 35%; --my: 20%; --mw: 17vw" data-delay="760">
           <img src="img/ceit-label.webp" alt="A printed CEIT QR label" width="350" height="510">
@@ -54,7 +54,7 @@
       </h1>
 
       <div class="hero-foot">
-        <p class="lede">I'm a full-stack developer in the Philippines. Lately: an inventory system for our college, a jeepney app for commuters, and a usage tracker for AI coding agents.</p>
+        <p class="lede">I'm a full-stack developer in the Philippines. Lately: an inventory system for our college, a jeepney app for commuters, an hourly traffic dataset for 25 routes across the country, and a usage tracker for AI coding agents.</p>
         <p class="hint">Drag the screenshots around</p>
       </div>
     </section>
@@ -142,6 +142,45 @@
         <p class="links">
           <a href="https://github.com/dadsadadsadad/para-showcase" target="_blank" rel="noopener">Screenshots &amp; write-up</a>
         </p>
+      </div>
+    </section>
+
+    <section class="project traffic" id="traffic">
+      <div class="project-head">
+        <h2 class="project-title">PH Traffic Index</h2>
+        <p class="project-meta">2026 · Data + web · Collecting since Oct 26</p>
+      </div>
+
+      <div class="hours" data-hours aria-hidden="true">
+        <div class="hours-row"></div>
+        <div class="hours-scale"><span>12 AM</span><span>6 AM</span><span>12 PM</span><span>6 PM</span><span>11 PM</span></div>
+        <p class="hours-note">One reading of all 25 routes every hour, at minute 7</p>
+      </div>
+
+      <div class="traffic-grid">
+        <div class="traffic-shots">
+          <figure class="browser" data-rise>
+            <div class="browser-bar"><span>ph-traffic-index.vercel.app</span></div>
+            <img src="img/traffic-dashboard.webp" alt="PH Traffic Index: how much longer trips are taking than on empty roads, and a map of the 25 routes" width="1440" height="1400" loading="lazy">
+          </figure>
+          <figure class="phone phone--small phone--left" data-drift="-0.14">
+            <img src="img/traffic-phone.webp" alt="The same page on a phone" width="600" height="1298" loading="lazy">
+          </figure>
+        </div>
+
+        <div class="project-copy">
+          <p>Waze and Google show traffic right now. What they don't publish is a history you can compare. Every hour a GitHub Actions job asks TomTom how long 25 fixed routes take with live traffic and saves the answer, building a dataset of the same trips measured the same way, week after week.</p>
+          <ul class="features">
+            <li>19 city routes in seven cities, 6 highways out of Manila</li>
+            <li>Rankings, rush-hour curves and event comparisons</li>
+            <li>A request counter that keeps it on TomTom's free tier</li>
+            <li>No server of its own: GitHub, Supabase and Vercel</li>
+          </ul>
+          <p class="stack">Next.js · TypeScript · Supabase · GitHub Actions · TomTom Routing API · MapLibre</p>
+          <p class="links">
+            <a href="https://ph-traffic-index.vercel.app" target="_blank" rel="noopener">Live dashboard</a>
+          </p>
+        </div>
       </div>
     </section>
 

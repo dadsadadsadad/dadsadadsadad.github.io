@@ -539,6 +539,67 @@ code {
   border-top: 1px solid var(--line);
 }
 
+/* traffic */
+.hours {
+  margin-bottom: clamp(40px, 6vw, 72px);
+}
+
+.hours-row {
+  display: grid;
+  grid-template-columns: repeat(24, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.hours-row span {
+  height: clamp(28px, 4vw, 44px);
+  border-radius: 4px;
+  background: var(--paper-2);
+  transform-origin: 50% 100%;
+  transition: background 0.35s, transform 0.5s var(--ease-out);
+}
+
+.hours-row span.read {
+  background: var(--ink);
+}
+
+.hours-row span.latest {
+  background: var(--signal);
+  transform: scaleY(1.25);
+}
+
+.hours-scale {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.hours-note {
+  margin-top: 14px;
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+}
+
+.traffic-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+  gap: clamp(32px, 5vw, 80px);
+  align-items: start;
+}
+
+.traffic-shots {
+  position: relative;
+  padding-bottom: 10%;
+}
+
+.phone--left {
+  right: auto;
+  left: -3%;
+  width: 22%;
+}
+
 /* trackage */
 .trackage-grid {
   display: grid;
@@ -738,8 +799,22 @@ code {
 
 @media (max-width: 900px) {
   .ceit-grid,
+  .traffic-grid,
   .trackage-grid {
     grid-template-columns: 1fr;
+  }
+
+  .traffic-shots {
+    margin-left: 8%;
+  }
+
+  .phone--left {
+    left: -10%;
+    width: 26%;
+  }
+
+  .hours-row {
+    gap: 2px;
   }
 
   .ceit-shots {
