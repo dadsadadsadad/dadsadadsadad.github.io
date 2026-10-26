@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rafaelle Raprap, developer</title>
+  <meta name="description" content="Rafaelle Raprap is a full-stack developer in the Philippines building web apps with Next.js, TypeScript and PostgreSQL.">
+  <meta name="theme-color" content="#ece7dc">
+  <meta property="og:title" content="Rafaelle Raprap, developer">
+  <meta property="og:description" content="Full-stack web apps with Next.js, TypeScript and PostgreSQL.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,300..900&family=Instrument+Sans:wght@400..600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+  <div class="progress" aria-hidden="true"></div>
+
+  <header class="bar">
+    <a class="mark" href="#top" aria-label="Back to top">RR</a>
+    <nav aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <p class="clock">Manila <time id="clock">--:--</time></p>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <h1 class="name" aria-label="Rafaelle Raprap">
+        <span class="line"><span class="kinetic" data-kinetic aria-hidden="true">Rafaelle</span></span>
+        <span class="line line--right"><span class="kinetic" data-kinetic aria-hidden="true">Raprap</span></span>
+      </h1>
+
+      <div class="hero-foot">
+        <p class="lede">Full-stack developer in the Philippines. I build web apps with Next.js, TypeScript and Postgres. Most recently, the inventory and borrowing system for our engineering college.</p>
+        <a class="cue" href="#work">
+          <span>See the work</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v15m0 0-6-6m6 6 6-6"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <div class="ticker" aria-label="Tools I use">
+      <div class="ticker-track">
+        <ul class="ticker-set">
+          <li>Next.js</li><li>React</li><li>TypeScript</li><li>PostgreSQL</li><li>Prisma</li><li>Supabase</li><li>NestJS</li><li>Tailwind</li><li>Playwright</li><li>Vercel</li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="work" id="work">
+      <h2 class="section-title">Things I've built</h2>
+
+      <article class="project">
+        <div class="project-copy">
+          <p class="project-meta"><span>2026</span><span>Thesis · Full stack</span></p>
+          <h3 class="project-title">CEIT Inventory</h3>
+          <p class="project-desc">The inventory system for the College of Engineering and IT. Every item gets a QR label, so checking something out, logging a repair or finding where a monitor went is one scan away. It's live, and it runs on the college's real equipment records.</p>
+          <ul class="features">
+            <li>QR labels and in-browser scanning</li>
+            <li>Borrowing, returns and maintenance logs</li>
+            <li>Spreadsheet import and PDF / Excel reports</li>
+            <li>Roles, an activity trail and email notices</li>
+            <li>A dashboard you rearrange by dragging</li>
+          </ul>
+          <p class="stack">Next.js 16 · React 19 · Prisma · PostgreSQL · Supabase · Playwright</p>
+        </div>
+        <div class="project-visual">
+          <canvas data-visual="qr" aria-hidden="true"></canvas>
+        </div>
+      </article>
+
+      <article class="project project--flip">
+        <div class="project-copy">
+          <p class="project-meta"><span>2026</span><span>Side project · Full stack</span></p>
+          <h3 class="project-title">Plutus AI</h3>
+          <p class="project-desc">A workspace for writing and keeping AI prompts. Prompts live inside projects, every run is logged, and a dashboard shows what's being used.</p>
+          <ul class="features">
+            <li>Prompts organised by project</li>
+            <li>Run logs you can look back through</li>
+            <li>Sign-in and per-user settings</li>
+          </ul>
+          <p class="stack">Next.js · React · TypeScript</p>
+        </div>
+        <div class="project-visual">
+          <canvas data-visual="stream" aria-hidden="true"></canvas>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-copy">
+          <p class="project-meta"><span>2026</span><span>Side project · API + web</span></p>
+          <h3 class="project-title">Events Manager</h3>
+          <p class="project-desc">An app for planning and running events, split the way bigger products are: a NestJS API and a Next.js front end living in one monorepo with shared packages.</p>
+          <ul class="features">
+            <li>NestJS REST API</li>
+            <li>Next.js web client</li>
+            <li>npm workspaces monorepo</li>
+          </ul>
+          <p class="stack">NestJS · Next.js · TypeScript</p>
+        </div>
+        <div class="project-visual">
+          <canvas data-visual="calendar" aria-hidden="true"></canvas>
+        </div>
+      </article>
+    </section>
+
+    <section class="about" id="about">
+      <h2 class="visually-hidden">About</h2>
+      <p class="about-text" data-words>I'm Rafaelle. I like software that disappears into someone's day: the scanner that just works, the report that comes out already formatted, the dashboard that shows the one number you came for. I care about the unglamorous parts too, like empty states, error messages and what happens when the Wi-Fi drops. Most of what I build is TypeScript, from the database schema to the last hover state.</p>
+
+      <div class="toolbox">
+        <div>
+          <h3>Front end</h3>
+          <ul><li>React &amp; Next.js</li><li>TypeScript</li><li>Tailwind, plain CSS</li><li>Accessible, responsive UI</li></ul>
+        </div>
+        <div>
+          <h3>Back end</h3>
+          <ul><li>PostgreSQL &amp; Prisma</li><li>Supabase</li><li>NestJS</li><li>REST APIs, auth, email</li></ul>
+        </div>
+        <div>
+          <h3>Shipping</h3>
+          <ul><li>Git &amp; GitHub</li><li>Vercel</li><li>Playwright tests</li><li>Migrations on live data</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2 class="contact-title" data-stretch>Let's talk</h2>
+      <div class="contact-row">
+        <p>Building something, hiring, or just want to compare notes? My inbox is open.</p>
+        <div class="contact-actions">
+          <a class="pill magnetic" href="mailto:rafaelle.raprap@gmail.com"><span>rafaelle.raprap@gmail.com</span></a>
+          <button class="pill pill--ghost magnetic" type="button" data-copy="rafaelle.raprap@gmail.com"><span>Copy email</span></button>
+          <a class="pill pill--ghost magnetic" href="https://github.com/dadsadadsadad" target="_blank" rel="noopener"><span>GitHub</span></a>
+        </div>
+      </div>
+      <footer class="foot">
+        <span>© 2026 Rafaelle Raprap</span>
+        <a href="#top">Back to top</a>
+      </footer>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
