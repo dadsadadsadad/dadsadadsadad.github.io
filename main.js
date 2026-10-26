@@ -206,6 +206,24 @@
   )
   steps.forEach(li => stepObserver.observe(li))
 
+  // PH Traffic Index: a day of hourly readings fills in as the section scrolls past
+  const hours = document.querySelector('[data-hours]')
+  const hourRow = hours.querySelector('.hours-row')
+  const hourCells = Array.from({ length: 24 }, () => hourRow.appendChild(document.createElement('span')))
+  let hoursFilled = -1
+
+  function updateHours() {
+    const r = hours.getBoundingClientRect()
+    const p = reduceMotion ? 1 : clamp((innerHeight * 0.9 - r.top) / (innerHeight * 0.6), 0, 1)
+    const filled = Math.round(p * 24)
+    if (filled === hoursFilled) return
+    hoursFilled = filled
+    hourCells.forEach((cell, i) => {
+      cell.classList.toggle('read', i < filled)
+      cell.classList.toggle('latest', i === filled - 1 && filled < 24)
+    })
+  }
+
   // Trackage: type the install command, then scroll the site inside the frame
   const typed = document.querySelector('[data-type]')
   const command = typed.dataset.type
@@ -261,6 +279,7 @@
     const step = Math.min(4, (now - last) / 16.67)
     last = now
     updatePrints(step)
+    updateHours()
     if (!reduceMotion) {
       updateDrift()
       updatePan()
