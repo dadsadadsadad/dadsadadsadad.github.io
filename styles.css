@@ -555,7 +555,7 @@ code {
   border-radius: 4px;
   background: var(--paper-2);
   transform-origin: 50% 100%;
-  transition: background 0.35s, transform 0.5s var(--ease-out);
+  transition: background 0.2s, transform 0.35s var(--ease-out);
 }
 
 .hours-row span.read {
@@ -576,10 +576,23 @@ code {
   color: var(--muted);
 }
 
+.hours {
+  cursor: ew-resize;
+  touch-action: pan-y;
+}
+
 .hours-note {
   margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
   font-family: var(--mono);
   font-size: 0.8125rem;
+}
+
+.hours-hint {
+  color: var(--muted);
 }
 
 .traffic-grid {
@@ -648,80 +661,24 @@ code {
   will-change: transform;
 }
 
-/* about */
-.about {
-  background: var(--ink);
-  color: var(--paper);
-  padding: clamp(96px, 12vw, 168px) var(--gutter);
-  display: grid;
-  grid-template-columns: minmax(0, 3fr) minmax(0, 8fr);
-  gap: 24px clamp(32px, 5vw, 80px);
-}
-
-.about h2 {
-  font-family: var(--mono);
-  font-weight: 500;
-  font-size: 0.8125rem;
-  color: var(--muted-dark);
-  padding-top: 0.6em;
-}
-
-.about-body p {
-  font-family: var(--display);
-  font-size: clamp(1.5rem, 3.2vw, 2.75rem);
-  font-variation-settings: "wdth" 88, "wght" 520;
-  line-height: 1.15;
-  max-width: 28ch;
-  text-wrap: pretty;
-}
-
-.about-body p + p {
-  margin-top: 0.8em;
-  color: var(--muted-dark);
-}
-
-.toolbox {
-  grid-column: 2;
-  margin-top: clamp(48px, 7vw, 96px);
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 32px;
-  border-top: 1px solid var(--line-dark);
-  padding-top: 28px;
-}
-
-.toolbox h3 {
-  font-family: var(--mono);
-  font-weight: 500;
-  font-size: 0.8125rem;
-  color: var(--muted-dark);
-  margin-bottom: 14px;
-}
-
-.toolbox li {
-  padding: 5px 0;
-}
-
 /* contact */
 .contact {
-  background: var(--signal);
-  color: var(--ink);
-  padding: clamp(96px, 12vw, 160px) var(--gutter) 28px;
-  overflow: hidden;
+  background: var(--ink);
+  color: var(--paper);
+  padding: clamp(80px, 10vw, 140px) var(--gutter) 28px;
 }
 
 .contact-title {
   font-family: var(--display);
-  font-size: clamp(4rem, 15vw, 16rem);
-  font-variation-settings: "wdth" 110, "wght" 900;
-  line-height: 0.82;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-variation-settings: "wdth" 90, "wght" 800;
+  line-height: 0.95;
   text-transform: uppercase;
-  white-space: nowrap;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 .contact-row {
-  margin-top: clamp(40px, 6vw, 72px);
+  margin-top: clamp(24px, 4vw, 40px);
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -730,9 +687,10 @@ code {
 }
 
 .contact-row > p {
-  max-width: 30ch;
-  font-size: 1.25rem;
-  line-height: 1.4;
+  max-width: 34ch;
+  font-size: 1.125rem;
+  line-height: 1.45;
+  color: var(--muted-dark);
 }
 
 .contact-links {
@@ -744,23 +702,23 @@ code {
 
 .email {
   font-family: var(--display);
-  font-size: clamp(1.25rem, 3vw, 2.5rem);
+  font-size: clamp(1.25rem, 2.6vw, 2.25rem);
   font-variation-settings: "wdth" 80, "wght" 700;
   text-decoration: none;
-  background: linear-gradient(currentColor, currentColor) 0 100% / 100% 2px no-repeat;
-  transition: background-size 0.5s var(--ease-out);
+  background: linear-gradient(var(--signal), var(--signal)) 0 100% / 100% 2px no-repeat;
+  transition: background-size 0.5s var(--ease-out), color 0.2s;
   overflow-wrap: anywhere;
 }
 
 .email:hover {
-  background-size: 0 2px;
-  background-position: 100% 100%;
+  color: var(--signal);
 }
 
 .contact-small {
   display: flex;
   gap: 20px;
   font-weight: 500;
+  color: var(--muted-dark);
 }
 
 .contact-small button {
@@ -777,20 +735,23 @@ code {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 5px;
+  transition: color 0.2s;
 }
 
-.contact :focus-visible {
-  outline-color: var(--ink);
+.contact-small button:hover,
+.contact-small a:hover {
+  color: var(--paper);
 }
 
 .foot {
-  margin-top: clamp(80px, 10vw, 140px);
+  margin-top: clamp(64px, 8vw, 112px);
   padding-top: 20px;
-  border-top: 1px solid rgba(20, 18, 16, 0.25);
+  border-top: 1px solid var(--line-dark);
   display: flex;
   justify-content: space-between;
   font-family: var(--mono);
   font-size: 0.8125rem;
+  color: var(--muted-dark);
 }
 
 .foot a {
@@ -827,14 +788,6 @@ code {
     width: 30%;
   }
 
-  .about {
-    grid-template-columns: 1fr;
-  }
-
-  .toolbox {
-    grid-column: 1;
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
 @media (max-width: 700px) {
@@ -889,9 +842,6 @@ code {
     padding: 4px;
   }
 
-  .toolbox {
-    grid-template-columns: 1fr;
-  }
 
   .contact-title {
     font-size: 13vw;
