@@ -3,12 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rafaelle Raprap, developer</title>
-  <meta name="description" content="Rafaelle Raprap is a full-stack developer in the Philippines building web apps with Next.js, TypeScript and PostgreSQL.">
+  <title>Rafaelle Francisco, developer</title>
+  <meta name="description" content="Rafaelle Francisco is a full-stack developer in the Philippines. CEIT Inventory, Para and Trackage.">
   <meta name="theme-color" content="#ece7dc">
-  <meta property="og:title" content="Rafaelle Raprap, developer">
-  <meta property="og:description" content="Full-stack web apps with Next.js, TypeScript and PostgreSQL.">
+  <meta property="og:title" content="Rafaelle Francisco, developer">
+  <meta property="og:description" content="CEIT Inventory, Para and Trackage.">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="https://dadsadadsadad.github.io/img/ceit-dashboard.webp">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,12 +18,10 @@
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-  <div class="progress" aria-hidden="true"></div>
-
   <header class="bar">
-    <a class="mark" href="#top" aria-label="Back to top">RR</a>
+    <a class="mark" href="#top" aria-label="Back to top">RF</a>
     <nav aria-label="Sections">
-      <a href="#work">Work</a>
+      <a href="#ceit">Work</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -31,117 +30,192 @@
 
   <main>
     <section class="hero" id="top">
-      <h1 class="name" aria-label="Rafaelle Raprap">
-        <span class="line"><span class="kinetic" data-kinetic aria-hidden="true">Rafaelle</span></span>
-        <span class="line line--right"><span class="kinetic" data-kinetic aria-hidden="true">Raprap</span></span>
+      <div class="desk" aria-label="Screenshots from my projects">
+        <a class="print print--wide" href="#ceit" style="--x: 46%; --y: 5%; --r: -4deg; --w: 26vw; --mx: 3%; --my: 11%; --mw: 58vw" data-delay="0">
+          <img src="img/ceit-dashboard.webp" alt="CEIT Inventory dashboard" width="1092" height="792">
+        </a>
+        <a class="print" href="#para" style="--x: 85%; --y: 5%; --r: 7deg; --w: 11.5vw; --mx: 68%; --my: 8%; --mw: 25vw" data-delay="160">
+          <img src="img/para-map.webp" alt="Para map with jeepney routes" width="600" height="1333">
+        </a>
+        <a class="print" href="#trackage" style="--x: 73%; --y: 42%; --r: 3deg; --w: 20vw; --mx: 44%; --my: 31%; --mw: 46vw" data-delay="420">
+          <img src="img/trackage-site.webp" alt="Trackage website" width="1440" height="2406" class="crop-top">
+        </a>
+        <a class="print" href="#para" style="--x: 33%; --y: 9%; --r: -9deg; --w: 10.5vw; --mx: 9%; --my: 27%; --mw: 23vw" data-delay="520">
+          <img src="img/para-fare.webp" alt="Para fare check" width="600" height="1333">
+        </a>
+        <a class="print print--label" href="#ceit" style="--x: 79%; --y: 29%; --r: 11deg; --w: 8.5vw; --mx: 35%; --my: 20%; --mw: 17vw" data-delay="760">
+          <img src="img/ceit-label.webp" alt="A printed CEIT QR label" width="350" height="510">
+        </a>
+      </div>
+
+      <h1 class="name">
+        <span class="line"><span>Rafaelle</span></span>
+        <span class="line"><span>Francisco</span></span>
       </h1>
 
       <div class="hero-foot">
-        <p class="lede">Full-stack developer in the Philippines. I build web apps with Next.js, TypeScript and Postgres. Most recently, the inventory and borrowing system for our engineering college.</p>
-        <a class="cue" href="#work">
-          <span>See the work</span>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v15m0 0-6-6m6 6 6-6"/></svg>
-        </a>
+        <p class="lede">I'm a full-stack developer in the Philippines. Lately: an inventory system for our college, a jeepney app for commuters, and a usage tracker for AI coding agents.</p>
+        <p class="hint">Drag the screenshots around</p>
       </div>
     </section>
 
-    <div class="ticker" aria-label="Tools I use">
-      <div class="ticker-track">
-        <ul class="ticker-set">
-          <li>Next.js</li><li>React</li><li>TypeScript</li><li>PostgreSQL</li><li>Prisma</li><li>Supabase</li><li>NestJS</li><li>Tailwind</li><li>Playwright</li><li>Vercel</li>
-        </ul>
+    <section class="project ceit" id="ceit">
+      <div class="project-head">
+        <h2 class="project-title">CEIT Inventory</h2>
+        <p class="project-meta">2026 · Thesis · Live</p>
       </div>
-    </div>
 
-    <section class="work" id="work">
-      <h2 class="section-title">Things I've built</h2>
-
-      <article class="project">
+      <div class="ceit-grid">
         <div class="project-copy">
-          <p class="project-meta"><span>2026</span><span>Thesis · Full stack</span></p>
-          <h3 class="project-title">CEIT Inventory</h3>
-          <p class="project-desc">The inventory system for the College of Engineering and IT. Every item gets a QR label, so checking something out, logging a repair or finding where a monitor went is one scan away. It's live, and it runs on the college's real equipment records.</p>
+          <p>QR-based inventory for the College of Engineering and IT's labs. Every unit gets an asset tag like <code>PC-LAB1-0001</code> and a printed label. Staff scan it to edit the record; students scan it to borrow, return or report a problem.</p>
           <ul class="features">
-            <li>QR labels and in-browser scanning</li>
-            <li>Borrowing, returns and maintenance logs</li>
-            <li>Spreadsheet import and PDF / Excel reports</li>
-            <li>Roles, an activity trail and email notices</li>
-            <li>A dashboard you rearrange by dragging</li>
+            <li>QR labels, single or a whole A4 sheet</li>
+            <li>Borrowing, reservations, overdue reminders</li>
+            <li>Maintenance tickets and an audit trail</li>
+            <li>CSV / Excel import with a dry-run check</li>
+            <li>Reports on the page or as PDF and CSV</li>
           </ul>
+
+          <div class="printer" aria-hidden="true">
+            <div class="printer-slot"></div>
+            <div class="printer-paper"><img src="img/ceit-label.webp" alt="" width="350" height="510" loading="lazy"></div>
+          </div>
+
           <p class="stack">Next.js 16 · React 19 · Prisma · PostgreSQL · Supabase · Playwright</p>
+          <p class="links">
+            <a href="https://ceit-inventory.vercel.app" target="_blank" rel="noopener">Live site</a>
+            <a href="https://github.com/dadsadadsadad/ceit-inventory" target="_blank" rel="noopener">Source</a>
+          </p>
         </div>
-        <div class="project-visual">
-          <canvas data-visual="qr" aria-hidden="true"></canvas>
-        </div>
-      </article>
 
-      <article class="project project--flip">
-        <div class="project-copy">
-          <p class="project-meta"><span>2026</span><span>Side project · Full stack</span></p>
-          <h3 class="project-title">Plutus AI</h3>
-          <p class="project-desc">A workspace for writing and keeping AI prompts. Prompts live inside projects, every run is logged, and a dashboard shows what's being used.</p>
-          <ul class="features">
-            <li>Prompts organised by project</li>
-            <li>Run logs you can look back through</li>
-            <li>Sign-in and per-user settings</li>
-          </ul>
-          <p class="stack">Next.js · React · TypeScript</p>
+        <div class="ceit-shots">
+          <figure class="browser" data-rise>
+            <div class="browser-bar"><span>ceit-inventory.vercel.app</span></div>
+            <img src="img/ceit-dashboard.webp" alt="The CEIT Inventory dashboard: item counts, borrowing, things that need attention, items by category" width="1092" height="792" loading="lazy">
+          </figure>
+          <figure class="phone phone--small" data-drift="0.18">
+            <img src="img/ceit-scan.webp" alt="An item record on a phone after scanning its QR code" width="390" height="780" loading="lazy">
+          </figure>
         </div>
-        <div class="project-visual">
-          <canvas data-visual="stream" aria-hidden="true"></canvas>
-        </div>
-      </article>
+      </div>
+    </section>
 
-      <article class="project">
+    <section class="project para" id="para">
+      <div class="project-head">
+        <h2 class="project-title">Para</h2>
+        <p class="project-meta">2026 · Mobile app · Heading to Play Store &amp; App Store</p>
+      </div>
+      <p class="para-intro">Jeepneys carry millions of people a day, but there's no timetable, no fixed stops and no official map. You learn the routes by asking. Para puts them on a map, plans the trip, and tells you the fare before you ride.</p>
+
+      <div class="para-grid">
+        <div class="para-phone-wrap">
+          <figure class="phone" data-screens>
+            <img src="img/para-map.webp" alt="Map of jeepney routes around Taytay, Antipolo and Pasig" width="600" height="1333" loading="lazy">
+            <img src="img/para-planner.webp" alt="Trip planner showing a 60 minute, 31 peso option" width="600" height="1298" loading="lazy">
+            <img src="img/para-fare.webp" alt="Fare check printed as a receipt" width="600" height="1333" loading="lazy">
+            <img src="img/para-driver.webp" alt="Driver Mode route picker" width="600" height="1298" loading="lazy">
+          </figure>
+        </div>
+
+        <ol class="para-steps">
+          <li data-step="0">
+            <h3>Every route, drawn as its signboard</h3>
+            <p>Tap a route for its stops, hours and fare; tap a terminal for every route that passes it. Routes, stops and fares are cached, so it keeps working without signal.</p>
+          </li>
+          <li data-step="1">
+            <h3>A trip planner for transport with no timetable</h3>
+            <p>Routes are cut into points every 150 m and searched on the phone for trips with one, two or three rides. No server ever learns where you're going.</p>
+          </li>
+          <li data-step="2">
+            <h3>The fare, before you ride</h3>
+            <p>Worked out from the official fare matrices for regular, student, senior and PWD riders, with a check for when you've been overcharged.</p>
+          </li>
+          <li data-step="3">
+            <h3>Live jeeps from the drivers themselves</h3>
+            <p>Driver Mode shares a jeep's position in the background, about every 10 seconds and only when it has moved, so commuters see what's coming.</p>
+          </li>
+        </ol>
+      </div>
+
+      <div class="para-foot">
+        <p class="stack">Flutter · Dart · Supabase · PostGIS · MapLibre · Next.js admin panel · ~1,000 automated tests</p>
+        <p class="links">
+          <a href="https://github.com/dadsadadsadad/para-showcase" target="_blank" rel="noopener">Screenshots &amp; write-up</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="project trackage" id="trackage">
+      <div class="project-head">
+        <h2 class="project-title">Trackage</h2>
+        <p class="project-meta">2026 · Web app + CLI · Launching soon</p>
+      </div>
+
+      <div class="trackage-grid">
         <div class="project-copy">
-          <p class="project-meta"><span>2026</span><span>Side project · API + web</span></p>
-          <h3 class="project-title">Events Manager</h3>
-          <p class="project-desc">An app for planning and running events, split the way bigger products are: a NestJS API and a Next.js front end living in one monorepo with shared packages.</p>
+          <p>Usage, cost and context analytics for AI coding agents like Claude Code, Codex and Gemini CLI, across every computer you use. A small open-source collector reads the logs the agents already keep and syncs numbers only. Prompts, code and file paths never leave your machine.</p>
+          <div class="terminal" aria-label="npx trackage">
+            <span class="prompt">$</span> <span class="typed" data-type="npx trackage"></span><span class="caret"></span>
+          </div>
           <ul class="features">
-            <li>NestJS REST API</li>
-            <li>Next.js web client</li>
-            <li>npm workspaces monorepo</li>
+            <li>Live view of every running agent</li>
+            <li>Cost per session, project and model</li>
+            <li>Alerts in the app, email, Slack or Discord</li>
+            <li>Free, Pro and Team plans</li>
           </ul>
-          <p class="stack">NestJS · Next.js · TypeScript</p>
+          <p class="stack">Node.js · Express · React · WebSocket · Fly.io</p>
+          <p class="links">
+            <a href="https://dadsadadsadad.github.io/trackage-showcase/" target="_blank" rel="noopener">Website</a>
+            <a href="https://github.com/dadsadadsadad/trackage-cli" target="_blank" rel="noopener">Collector source</a>
+          </p>
         </div>
-        <div class="project-visual">
-          <canvas data-visual="calendar" aria-hidden="true"></canvas>
-        </div>
-      </article>
+
+        <figure class="browser browser--tall" data-pan>
+          <div class="browser-bar"><span>dadsadadsadad.github.io/trackage-showcase</span></div>
+          <div class="browser-view">
+            <img src="img/trackage-site.webp" alt="The Trackage website, from the headline down to pricing" width="1440" height="2406" loading="lazy">
+          </div>
+        </figure>
+      </div>
     </section>
 
     <section class="about" id="about">
-      <h2 class="visually-hidden">About</h2>
-      <p class="about-text" data-words>I'm Rafaelle. I like software that disappears into someone's day: the scanner that just works, the report that comes out already formatted, the dashboard that shows the one number you came for. I care about the unglamorous parts too, like empty states, error messages and what happens when the Wi-Fi drops. Most of what I build is TypeScript, from the database schema to the last hover state.</p>
+      <h2>About</h2>
+      <div class="about-body">
+        <p>I'm Rafaelle. I like software that disappears into someone's day: the scanner that just works, the fare you know before you board, the report that comes out already formatted.</p>
+        <p>I care about the parts nobody demos, like empty states, error messages, offline mode and what the database lets each role touch. Most of what I build is TypeScript or Dart, from the schema to the last hover state.</p>
+      </div>
 
       <div class="toolbox">
         <div>
           <h3>Front end</h3>
-          <ul><li>React &amp; Next.js</li><li>TypeScript</li><li>Tailwind, plain CSS</li><li>Accessible, responsive UI</li></ul>
+          <ul><li>React &amp; Next.js</li><li>Flutter</li><li>TypeScript, Dart</li><li>Accessible, responsive UI</li></ul>
         </div>
         <div>
           <h3>Back end</h3>
-          <ul><li>PostgreSQL &amp; Prisma</li><li>Supabase</li><li>NestJS</li><li>REST APIs, auth, email</li></ul>
+          <ul><li>PostgreSQL, PostGIS</li><li>Supabase, Prisma</li><li>Node.js &amp; Express</li><li>Row level security, auth</li></ul>
         </div>
         <div>
           <h3>Shipping</h3>
-          <ul><li>Git &amp; GitHub</li><li>Vercel</li><li>Playwright tests</li><li>Migrations on live data</li></ul>
+          <ul><li>Git &amp; GitHub</li><li>Vercel, Fly.io</li><li>Playwright, pgTAP</li><li>Migrations on live data</li></ul>
         </div>
       </div>
     </section>
 
     <section class="contact" id="contact">
-      <h2 class="contact-title" data-stretch>Let's talk</h2>
+      <h2 class="contact-title">Let's talk</h2>
       <div class="contact-row">
         <p>Building something, hiring, or just want to compare notes? My inbox is open.</p>
-        <div class="contact-actions">
-          <a class="pill magnetic" href="mailto:rafaelle.raprap@gmail.com"><span>rafaelle.raprap@gmail.com</span></a>
-          <button class="pill pill--ghost magnetic" type="button" data-copy="rafaelle.raprap@gmail.com"><span>Copy email</span></button>
-          <a class="pill pill--ghost magnetic" href="https://github.com/dadsadadsadad" target="_blank" rel="noopener"><span>GitHub</span></a>
+        <div class="contact-links">
+          <a class="email" href="mailto:rafaelle.raprap@gmail.com">rafaelle.raprap@gmail.com</a>
+          <span class="contact-small">
+            <button type="button" data-copy="rafaelle.raprap@gmail.com">Copy email</button>
+            <a href="https://github.com/dadsadadsadad" target="_blank" rel="noopener">GitHub</a>
+          </span>
         </div>
       </div>
       <footer class="foot">
-        <span>© 2026 Rafaelle Raprap</span>
+        <span>© 2026 Rafaelle Francisco</span>
         <a href="#top">Back to top</a>
       </footer>
     </section>
