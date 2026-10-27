@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,300..900&family=Instrument+Sans:wght@400..600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=6">
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -104,43 +104,33 @@
         <h2 class="project-title">Para</h2>
         <p class="project-meta">2026 · Mobile app · Heading to Play Store &amp; App Store</p>
       </div>
-      <p class="para-intro">Jeepneys don't have timetables or an official map, so most people learn the routes by asking around. Para puts the routes on a map, plans the trip, and tells you the fare before you get on.</p>
 
       <div class="para-grid">
-        <div class="para-phone-wrap">
-          <figure class="phone" data-screens>
+        <div class="para-shots">
+          <figure class="phone" data-drift="0.06">
             <img src="img/para-map.webp" alt="Map of jeepney routes around Taytay, Antipolo and Pasig" width="600" height="1333" loading="lazy">
+          </figure>
+          <figure class="phone" data-drift="-0.08">
             <img src="img/para-planner.webp" alt="Trip planner showing a 60 minute, 31 peso option" width="600" height="1298" loading="lazy">
+          </figure>
+          <figure class="phone" data-drift="0.12">
             <img src="img/para-fare.webp" alt="Fare check printed as a receipt" width="600" height="1333" loading="lazy">
-            <img src="img/para-driver.webp" alt="Driver Mode route picker" width="600" height="1298" loading="lazy">
           </figure>
         </div>
 
-        <ol class="para-steps">
-          <li data-step="0">
-            <h3>The routes, the way they look on the jeep</h3>
-            <p>Every route is drawn as its signboard. Tap one to see its stops, hours and fare. It works offline too.</p>
-          </li>
-          <li data-step="1">
-            <h3>Trip planning without a timetable</h3>
-            <p>The planner runs on the phone itself, so it's fast, it works without signal, and where you're going never gets sent anywhere.</p>
-          </li>
-          <li data-step="2">
-            <h3>Know the fare first</h3>
-            <p>Fares come from the official fare tables, with the student, senior and PWD discounts. There's also a check for when you get overcharged.</p>
-          </li>
-          <li data-step="3">
-            <h3>See the jeep coming</h3>
-            <p>Drivers can turn on Driver Mode, which shares where the jeep is so the people waiting can see it.</p>
-          </li>
-        </ol>
-      </div>
-
-      <div class="para-foot">
-        <p class="stack">Flutter · Dart · Supabase · PostGIS · MapLibre · Next.js admin panel · ~1,000 automated tests</p>
-        <p class="links">
-          <a href="https://github.com/dadsadadsadad/para-showcase" target="_blank" rel="noopener">Screenshots &amp; write-up</a>
-        </p>
+        <div class="project-copy">
+          <p>Jeepneys don't have timetables or an official map, so most people learn the routes by asking around. Para puts the routes on a map, plans the trip, and tells you the fare before you get on.</p>
+          <ul class="features">
+            <li>Every route drawn as its signboard, and it works offline</li>
+            <li>Trip planning on the phone, so where you're going stays private</li>
+            <li>Fares from the official tables, with student, senior and PWD rates</li>
+            <li>Driver Mode, so people waiting can see the jeep coming</li>
+          </ul>
+          <p class="stack">Flutter · Dart · Supabase · PostGIS · MapLibre · Next.js admin panel · ~1,000 automated tests</p>
+          <p class="links">
+            <a href="https://github.com/dadsadadsadad/para-showcase" target="_blank" rel="noopener">Screenshots &amp; write-up</a>
+          </p>
+        </div>
       </div>
     </section>
 
@@ -157,16 +147,6 @@
       </div>
 
       <div class="traffic-grid">
-        <div class="traffic-shots">
-          <figure class="browser" data-rise>
-            <div class="browser-bar"><span>ph-traffic-index.vercel.app</span></div>
-            <img src="img/traffic-dashboard.webp" alt="PH Traffic Index: how much longer trips are taking than on empty roads, and a map of the 25 routes" width="1440" height="1400" loading="lazy">
-          </figure>
-          <figure class="phone phone--small phone--left" data-drift="-0.14">
-            <img src="img/traffic-phone.webp" alt="The same page on a phone" width="600" height="1298" loading="lazy">
-          </figure>
-        </div>
-
         <div class="project-copy">
           <p>I wanted to know which roads are actually the worst and at what time, and I couldn't find that data anywhere, so I started collecting it. Every hour a script asks TomTom how long 25 routes take with traffic and saves the answer.</p>
           <ul class="features">
@@ -180,6 +160,16 @@
             <a href="https://ph-traffic-index.vercel.app" target="_blank" rel="noopener">Live dashboard</a>
           </p>
         </div>
+
+        <div class="traffic-shots">
+          <figure class="browser" data-rise>
+            <div class="browser-bar"><span>ph-traffic-index.vercel.app</span></div>
+            <img src="img/traffic-dashboard.webp" alt="PH Traffic Index: how much longer trips are taking than on empty roads, and a map of the 25 routes" width="1440" height="1400" loading="lazy">
+          </figure>
+          <figure class="phone phone--small phone--left" data-drift="-0.14">
+            <img src="img/traffic-phone.webp" alt="The same page on a phone" width="600" height="1298" loading="lazy">
+          </figure>
+        </div>
       </div>
     </section>
 
@@ -190,6 +180,13 @@
       </div>
 
       <div class="trackage-grid">
+        <figure class="browser browser--tall" data-pan>
+          <div class="browser-bar"><span>dadsadadsadad.github.io/trackage-showcase</span></div>
+          <div class="browser-view">
+            <img src="img/trackage-site.webp" alt="The Trackage website, from the headline down to pricing" width="1440" height="2406" loading="lazy">
+          </div>
+        </figure>
+
         <div class="project-copy">
           <p>Started because I wanted to see what my AI coding tools were costing me. A small open-source program reads the logs the tools already save and uploads only the numbers, so prompts and code stay on your computer.</p>
           <div class="terminal" aria-label="npx trackage">
@@ -207,13 +204,6 @@
             <a href="https://github.com/dadsadadsadad/trackage-cli" target="_blank" rel="noopener">Collector source</a>
           </p>
         </div>
-
-        <figure class="browser browser--tall" data-pan>
-          <div class="browser-bar"><span>dadsadadsadad.github.io/trackage-showcase</span></div>
-          <div class="browser-view">
-            <img src="img/trackage-site.webp" alt="The Trackage website, from the headline down to pricing" width="1440" height="2406" loading="lazy">
-          </div>
-        </figure>
       </div>
     </section>
 
@@ -236,6 +226,6 @@
     </section>
   </main>
 
-  <script src="main.js"></script>
+  <script src="main.js?v=6"></script>
 </body>
 </html>

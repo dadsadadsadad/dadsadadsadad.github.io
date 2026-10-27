@@ -188,25 +188,6 @@
     })
   }
 
-  // Para: the phone stays put while the captions scroll; each caption swaps the screen
-  const screens = [...document.querySelectorAll('[data-screens] img')]
-  const steps = [...document.querySelectorAll('[data-step]')]
-  const showStep = index => {
-    screens.forEach((img, i) => img.classList.toggle('shown', i <= index))
-    steps.forEach((li, i) => li.classList.toggle('active', i === index))
-  }
-  showStep(0)
-  const stepObserver = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) showStep(Number(entry.target.dataset.step))
-      })
-    },
-    // on phones the screen sits on top, so read the caption just below it
-    { rootMargin: matchMedia('(max-width: 700px)').matches ? '-78% 0px -21% 0px' : '-50% 0px -50% 0px' },
-  )
-  steps.forEach(li => stepObserver.observe(li))
-
   // PH Traffic Index: a day of hourly readings. It fills as you scroll, and on hover
   // the fill follows the mouse so you can slide through the day.
   const hours = document.querySelector('[data-hours]')
